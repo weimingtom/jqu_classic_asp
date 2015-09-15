@@ -43,8 +43,10 @@ IF Request.TotalBytes>0 Then
  '上传路径及文件名
 'saveFilename=""&year(now)&month(now)&day(now)&hour(now)&minute(now)&second(now)&"."&extendname
 function get_time()
+	randomize() '初始化种子
+	rnumber = cint(rnd() * 10000) 
 	msec = fix(timer()*100) mod 100
-	get_time=year(now)&right("0"&month(now),2)&right("0"&day(now),2)&right("0"&hour(now),2)&right("0"&minute(now),2)&right("0"&second(now),2)&right("0"&msec, 2)&"0"
+	get_time=year(now)&right("0"&month(now),2)&right("0"&day(now),2)&right("0"&hour(now),2)&right("0"&minute(now),2)&right("0"&second(now),2)&right("0"&msec, 2)&"0"&right("0000" & rnumber,4)
 end function
 saveFilename=get_time()&"."&extendname
  
