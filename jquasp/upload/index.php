@@ -1,4 +1,4 @@
 <?
-header("Location: up3.php");
+header("Location: up4.php");
 exit;
 ?>
