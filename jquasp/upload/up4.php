@@ -60,7 +60,8 @@ $(function () {
 		var file = data.files[0];
 		$('.start').click(function () {
 			$('.progress-bar').css('width','0%');
-			if (!data.iscanceled) {
+			if (!data.iscanceled && !data.issubmited) {
+				data.issubmited = true;
 				data.submit();
 			}
 		});
@@ -70,7 +71,7 @@ $(function () {
 			//$('.error').text("取消上传");
 			$('.preview_div').empty();
 			$('.results_div').empty();
-			console.log(data.files);
+			//console.log(data.files);
 		});
     }).on('fileuploadprocessalways', function (e, data) {
 		var index = data.index;
