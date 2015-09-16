@@ -101,11 +101,11 @@ $(function () {
     }).on('fileuploadfail', function (e, data) {
 		var index = 0;
         var file = data.files[index];
-		if (data.context !== "上传取消") {
+		if (!data.iscanceled) {
 			var item = $('<div><span class="imageLink"></span><span class="error text-danger"></span></div>');
 			item.find('.error').text("上传失败");
 			$('<div />')
-				.text("../imagefile/"+file.name)
+				.text(file.name)
 				.appendTo(item.find('.imageLink'));
 			item.appendTo('.results_div');
 		} else {
