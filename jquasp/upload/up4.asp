@@ -71,6 +71,7 @@ $(function () {
 			//$('.error').text("取消上传");
 			$('.preview_div').empty();
 			$('.results_div').empty();
+			$('.progress-bar').css('width','0%');
 			//console.log(data.files);
 		});
     }).on('fileuploadprocessalways', function (e, data) {
@@ -102,10 +103,11 @@ $(function () {
     }).on('fileuploadfail', function (e, data) {
 		var index = 0;
         var file = data.files[index];
+		$('.progress').removeClass('progress-striped');
 		if (!data.iscanceled) {
-			var item = $('<div><span class="imageLink"></span><span class="error text-danger"></span></div>');
+			var item = $('<div><span class="imageLink"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="error text-danger"></span></div>');
 			item.find('.error').text("上传失败");
-			$('<div />')
+			$('<span />')
 				.text(file.name)
 				.appendTo(item.find('.imageLink'));
 			item.appendTo('.results_div');
