@@ -5,7 +5,7 @@
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-<h1>下载图片列表</h1>
+<h1>上传图片列表</h1>
 <div>
 <a href="index.php">返回上传文件</a>
 <br />
