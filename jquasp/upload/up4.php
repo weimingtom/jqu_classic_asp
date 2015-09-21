@@ -95,7 +95,7 @@ $(function () {
 		
 		var item = $('<div><span class="imageLink"></span><span class="error text-danger"></span></div>');
 		item.find('.error').text("上传成功");
-		$('<a target="_blank" />').attr("href", "imagefile/"+file.name)
+		$('<a target="_blank" />').attr("href", "image.php?filename="+file.name)
 			.text("imagefile/"+file.name)
 			.appendTo(item.find('.imageLink'));
 		item.appendTo('.results_div');
